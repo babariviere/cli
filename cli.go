@@ -42,7 +42,7 @@ func (a App) Main(args []string) {
 			os.Exit(1)
 		}
 	} else if cmd == "help" {
-		if len(os.Args) > 1 {
+		if len(args) > 1 {
 			cmd := args[1]
 			if val, ok := a.aliases[cmd]; ok {
 				cmd = val
