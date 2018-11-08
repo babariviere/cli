@@ -24,7 +24,7 @@ func NewApp(usage string) *App {
 // Main parse arguments and executes subcommands
 //
 // e.j: app.Main(os.Args[1:])
-func (a App) Main(args []string) error {
+func (a App) Main(args []string) {
 	cmd := args[0]
 	if val, ok := a.aliases[cmd]; ok {
 		cmd = val
@@ -59,8 +59,6 @@ func (a App) Main(args []string) error {
 		fmt.Println(a.usage)
 		os.Exit(1)
 	}
-
-	return nil
 }
 
 // Usage returns app usage
