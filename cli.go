@@ -25,6 +25,10 @@ func NewApp(usage string) *App {
 //
 // e.j: app.Main(os.Args[1:])
 func (a App) Main(args []string) {
+	if len(args) == 0 {
+		fmt.Println(a.usage)
+		os.Exit(1)
+	}
 	cmd := args[0]
 	if val, ok := a.aliases[cmd]; ok {
 		cmd = val
